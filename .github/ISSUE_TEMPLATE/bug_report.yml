@@ -1,0 +1,101 @@
+name: Bug report
+description: Something in Puppetdroid isn't working as expected.
+title: "[bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug. A minimal, runnable repro gets it fixed fastest.
+
+  - type: dropdown
+    id: layer
+    attributes:
+      label: Which layer?
+      description: Where does the problem occur?
+      options:
+        - Accessibility (page.* / element.*)
+        - Chrome / WebView DOM (page.dom / page.webview)
+        - Network capture / interception
+        - AI vision / agent (device.ai / device.agent)
+        - Native controls (device.system)
+        - Security / RE (intents / frida / mitmproxy)
+        - VirtualMaster VM control
+        - Other / not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What did you observe? Include the exact error text if there is one.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproduction
+      description: The smallest script that triggers it. This will be rendered as JavaScript.
+      render: javascript
+      placeholder: |
+        import Puppetdroid from 'puppetdroid'
+        const device = await Puppetdroid.connect()
+        // ...
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Puppetdroid version
+      placeholder: e.g. 1.0.0
+    validations:
+      required: true
+
+  - type: input
+    id: node
+    attributes:
+      label: Node.js version
+      placeholder: e.g. 20.11.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Host OS
+      options: [Windows, macOS, Linux]
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: Device / Android version
+      description: Model and Android release (and whether it's a VirtualMaster VM).
+      placeholder: e.g. Pixel 4 · Android 12 (VirtualMaster VM)
+    validations:
+      required: true
+
+  - type: input
+    id: adb
+    attributes:
+      label: adb version
+      description: Output of `adb version` (first line).
+      placeholder: e.g. Android Debug Bridge version 1.0.41
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: adb/logcat output, stack traces, etc.
+      render: shell

@@ -1,0 +1,44 @@
+name: Feature request
+description: Suggest a capability or improvement for Puppetdroid.
+title: "[feat]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: The problem or workflow behind the request — not just the solution.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed API / behaviour
+      description: How you imagine it looking. Sketch the call if you can.
+      render: javascript
+      placeholder: |
+        await device.something(...)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: layer
+    attributes:
+      label: Which layer does it belong to?
+      options:
+        - Accessibility
+        - Chrome / WebView DOM
+        - Network capture / interception
+        - AI vision / agent
+        - Native controls
+        - Security / RE
+        - VirtualMaster
+        - New area
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered

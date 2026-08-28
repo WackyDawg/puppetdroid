@@ -1,0 +1,63 @@
+{
+  "name": "puppetdroid",
+  "version": "1.0.0",
+  "description": "The Puppeteer for Android — drive real devices through the accessibility tree, Chrome/WebView DOM over CDP, and a vision-LLM that reads and controls the screen. Includes network capture, request interception, VirtualMaster VM control, and more.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "example": "node examples/basic-automation.js",
+    "example:chrome": "node examples/chrome-cdp-example.js",
+    "example:network": "node examples/api-reverse-engineering.js",
+    "example:vm": "node examples/virtualmaster-control.js status"
+  },
+  "keywords": [
+    "android",
+    "automation",
+    "puppeteer",
+    "adb",
+    "testing",
+    "mobile",
+    "scraping",
+    "ui-testing",
+    "app-testing",
+    "e2e-testing",
+    "mobile-automation",
+    "android-testing",
+    "cdp",
+    "chrome-devtools-protocol",
+    "webview",
+    "network-capture",
+    "ai-agent",
+    "vision",
+    "ocr",
+    "virtualmaster",
+    "phone-farm"
+  ],
+  "author": "wackydawg (https://github.com/wackydawg)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wackydawg/puppetdroid.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wackydawg/puppetdroid/issues"
+  },
+  "homepage": "https://github.com/wackydawg/puppetdroid#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "xml2js": "^0.6.2"
+  },
+  "files": [
+    "src/",
+    "examples/",
+    "README.md",
+    "FEATURES.md",
+    "LICENSE"
+  ]
+}
